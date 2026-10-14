@@ -1,5 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head><title>Hello from Application</title></head>
-  <body><h1>Hai, This is Application Version: 003dd</h1></body>
-</html>
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html
+hooks:
+  AfterInstall:
+    - location: deploy-scripts/install.sh
+      timeout: 180
+      runas: root
